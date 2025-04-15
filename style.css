@@ -138,6 +138,15 @@ button {
   cursor: pointer;
 }
 
+.skill-category h4 {
+  Color:  WHITE;
+  align-self: CENTER;
+  text-align: center;
+  padding: 20px;
+  font-size: large;
+  font-weight:bolder;
+}
+
 input, textarea {
   display: block;
   width: 100%;
@@ -157,7 +166,13 @@ html { font-family: var(--ff-poppins); }
 body { background: var(--smoky-black); }
 
 
-
+#bbd__quote-icon {
+  width: 40px;
+  height: 10px !important;
+  font-size: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
 
 
 /*-----------------------------------*\

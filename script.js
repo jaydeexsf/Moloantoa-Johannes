@@ -53,9 +53,92 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
+const johannesUsersInTheDB = document.getElementById('the_above_video');
+const theDBNumber = document.getElementById('theDbiD');
 
+//////////////The dabase system checker ////////////////////////
 
-// custom select variables
+class FederatedTrainer {
+  constructor(databases) {
+    this.databases = databases;
+    this.globalModel = this.initializeModel();
+  }
+
+  initializeModel() {
+    // A simple feedforward NN model
+    return {
+      weights: Array(100).fill(Math.random()),
+      bias: Math.random()
+    };
+  }
+
+  train() {
+    let aggregatedGradients = Array(100).fill(0);
+
+    // Outer loop: Iterate over users in the DB
+    for (let i = 0; i < this.databases.length; i++) {
+      const currentDB = this.databases[i];
+      let dbGradients = Array(100).fill(0);
+
+      // Middle loop: Go through each DB for comparison or aggregation
+      for (let J = 0; J < this.databases.length; J++) {
+        const comparisonDB = this.databases[J];
+
+        // Inner loop: Iterate over user data features (e.g., input neurons)
+        for (let K = 0; K < currentDB.users.length; K++) {
+          const userData = currentDB.users[K].features;
+          let userGradient = this.computeGradient(userData);
+
+          // Accumulate gradients for this DB
+          dbGradients = dbGradients.map((g, index) => g + userGradient[index]);
+        }
+      }
+
+      // Aggregate gradients across DBs
+      aggregatedGradients = aggregatedGradients.map((g, index) => g + dbGradients[index]);
+    }
+
+    // Apply averaged gradients to global model
+    this.updateGlobalModel(aggregatedGradients);
+  }
+
+  computeGradient(data) {
+    // Placeholder for backpropagation gradient computation
+    return data.map((feature) => feature * 0.01);
+  }
+
+  updateGlobalModel(aggregatedGradients) {
+    const learningRate = 0.01;
+
+    this.globalModel.weights = this.globalModel.weights.map(
+      (w, index) => w - learningRate * (aggregatedGradients[index] / this.databases.length)
+    );
+  }
+
+  evaluate() {
+    console.log("Final Model Weights:", this.globalModel.weights);
+  }
+}
+
+// Define mock databases with users and features
+const databases = Array.from({ length: 5 }, (_, i) => ({
+  id: i,
+  users: Array.from({ length: 20 }, () => ({
+    id: Math.random(),
+    features: Array.from({ length: 100 }, () => Math.random())
+  }))
+}));
+
+// Instantiate and run the federated learning trainer
+const trainer = new FederatedTrainer(databases);
+trainer.train();
+trainer.evaluate();
+
+console.log('The datases have been searched');
+
+///////////////////////////////////////////////////////////////
+
+// custom select variables //
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");

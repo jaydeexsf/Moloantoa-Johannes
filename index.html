@@ -575,7 +575,7 @@
 
         <section class="skill">
           <h3 class="h3 skills-title">My Skills</h3>
-        
+
           <div id="skills-container"></div>
         </section>        
         
@@ -834,6 +834,7 @@
     - custom js link
   -->
   <script src="script.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 
   <!--
     - ionicon link
@@ -843,75 +844,116 @@
 
   <script>
   const skillsData = {
-  "Languages": [
-    { "name": "JavaScript (ES6+)", "percentage": 95 },
-    { "name": "TypeScript", "percentage": 75 },
-    { "name": "Python", "percentage": 80 },
-    { "name": "C#", "percentage": 60 }
-  ],
-  "Frontend": [
-    { "name": "React.js", "percentage": 75 },
-    { "name": "React Native", "percentage": 50 },
-    { "name": "HTML & CSS", "percentage": 95 },
-    { "name": "Angular", "percentage": 55 }
-  ],
-  "Backend": [
-    { "name": "Node.js", "percentage": 85 },
-    { "name": "Express.js", "percentage": 75 },
-    { "name": ".NET Core", "percentage": 50 },
-  ],
-  "Databases": [
-    { "name": "MongoDB", "percentage": 85 },
-    { "name": "PostgreSQL", "percentage": 45 },
-    { "name": "MySQL", "percentage": 60 },
-    { "name": "HubSpot CMS/DB", "percentage": 95 }
-  ],
-  "Cloud": [
-    { "name": "Microsoft Server", "percentage": 65 },
-    { "name": "AWS (Basics)", "percentage": 70 },
-  ],
-  "Cybersecurity & Systems": [
-    { "name": "Web Security (OWASP)", "percentage": 70 },
-    { "name": "Linux (Ubuntu, Kali)", "percentage": 40 },
-    { "name": "Windows Server & OS", "percentage": 65 },
-    { "name": "Networking Fundamentals", "percentage": 70 },
-    { "name": "Cybersecurity Basics", "percentage": 70 }
-  ]
-};
+    "Languages": [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Java",
+      "C#",
+      "SQL",
+      "HTML5",
+      "CSS3"
+    ],
+    "Frameworks": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Spring Boot",
+      ".NET Core",
+      "React Native",
+      "Angular"
+    ],
+    "Tools": [
+      "AWS",
+      "Docker",
+      "Postman",
+      "Git",
+      "Firebase",
+      "HubSpot",
+      "Nginx"
+    ],
+    "Databases": [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL"
+    ]
+  };
 
   
   const container = document.getElementById("skills-container");
-  
+
   for (let category in skillsData) {
     const section = document.createElement("div");
     section.classList.add("skill-category");
-  
+
     const heading = document.createElement("h4");
     heading.textContent = category;
     section.appendChild(heading);
-  
-    const list = document.createElement("ul");
-    list.classList.add("skills-list", "content-card");
-  
-    skillsData[category].forEach(skill => {
-      const item = document.createElement("li");
-      item.classList.add("skills-item");
-  
-      item.innerHTML = `
-        <div class="title-wrapper">
-          <h5 class="h5">${skill.name}</h5>
-          <data value="${skill.percentage}">${skill.percentage}%</data>
-        </div>
-        <div class="skill-progress-bg">
-          <div class="skill-progress-fill" style="width: ${skill.percentage}%;"></div>
-        </div>
-      `;
-      list.appendChild(item);
+
+    const card = document.createElement("div");
+    card.classList.add("content-card");
+
+    const badges = document.createElement("div");
+    badges.classList.add("skill-badges");
+
+    skillsData[category].forEach(name => {
+      const badge = document.createElement("span");
+      badge.classList.add("skill-badge");
+      badge.textContent = name;
+      badges.appendChild(badge);
     });
-  
-    section.appendChild(list);
+
+    card.appendChild(badges);
+    section.appendChild(card);
     container.appendChild(section);
   }
+
+  // Subtle Three.js particles background for skills section
+  (function(){
+    if (!window.THREE) return;
+    const skillSection = document.querySelector('.skill');
+    if (!skillSection) return;
+    const canvasWrapper = document.createElement('div');
+    canvasWrapper.className = 'skills-3d-canvas';
+    skillSection.appendChild(canvasWrapper);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+    camera.position.z = 6;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    canvasWrapper.appendChild(renderer.domElement);
+
+    const geometry = new THREE.BufferGeometry();
+    const count = 120;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 8;
+    }
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const material = new THREE.PointsMaterial({ color: 0xFFE08A, size: 0.03 });
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    const resize = () => {
+      const { width, height } = skillSection.getBoundingClientRect();
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const animate = () => {
+      points.rotation.y += 0.0015;
+      points.rotation.x += 0.0008;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+    animate();
+  })();
   
   </script>
 

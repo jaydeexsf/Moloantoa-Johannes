@@ -283,24 +283,51 @@
     const container = document.getElementById('skills-container');
     if (!container) return;
     container.innerHTML = '';
-    const left = document.createElement('div');
-    left.className = 'col-lg-6';
-    const right = document.createElement('div');
-    right.className = 'col-lg-6';
-    skills.forEach((s, idx) => {
-      const col = idx % 2 === 0 ? left : right;
-      const progress = document.createElement('div');
-      progress.className = 'progress';
-      progress.innerHTML = `
-        <span class="skill"><span>${s.name}</span> <i class="val">${s.level}%</i></span>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar" role="progressbar" aria-valuenow="${s.level}" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      `;
-      col.appendChild(progress);
+
+    // Create a single full-width column that holds a flexible grid of icons
+    const col = document.createElement('div');
+    col.className = 'col-12';
+
+    const grid = document.createElement('div');
+    grid.className = 'skills-grid';
+
+    const iconMap = {
+      'TypeScript': 'bi-filetype-ts',
+      'JavaScript': 'bi-filetype-js',
+      'Java': 'bi-cup-hot',
+      'SQL': 'bi-database',
+      'HTML5': 'bi-filetype-html',
+      'CSS': 'bi-filetype-css',
+      'React': 'bi-lightning-charge',
+      'ReactJS': 'bi-lightning-charge',
+      'Next.js': 'bi-box',
+      'NextJS': 'bi-box',
+      'Node': 'bi-cpu',
+      'NodeJS': 'bi-cpu',
+      'Express': 'bi-node-plus',
+      'ExpressJS': 'bi-node-plus',
+      'Spring Boot': 'bi-flower3',
+      'AWS': 'bi-cloud',
+      'Docker': 'bi-box-seam',
+      'Firebase': 'bi-fire',
+      'MongoDB': 'bi-database',
+      'PostgreSQL': 'bi-database',
+      'MySQL': 'bi-database'
+    };
+
+    (skills || []).forEach((s) => {
+      const badge = document.createElement('span');
+      badge.className = 'skill-badge';
+      badge.title = s.name;
+
+      const iconClass = iconMap[s.name] || 'bi-gear';
+      badge.innerHTML = `<i class="bi ${iconClass}"></i><span class="skill-name">${s.name}</span>`;
+
+      grid.appendChild(badge);
     });
-    container.appendChild(left);
-    container.appendChild(right);
+
+    col.appendChild(grid);
+    container.appendChild(col);
   }
 
   function renderProjects(projects) {

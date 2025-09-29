@@ -631,38 +631,47 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills .progress { display: none; }
+
+/* New icon grid for skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 12px;
+  align-items: flex-start;
 }
 
-.skills .progress .skill {
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 40px;
+  padding: 0 12px;
+  white-space: nowrap;
+  border-radius: 10px;
+  background: #f8f9fa;
+  color: var(--accent-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  gap: 8px;
+}
+
+.skill-badge i {
+  font-size: 22px;
+}
+
+.skill-badge .skill-name {
   color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
+  font-size: 14px;
   font-weight: 600;
-  font-family: var(--heading-font);
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+.skill-badge:hover {
+  transform: translateY(-2px);
+  background: #eef6ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /*--------------------------------------------------------------

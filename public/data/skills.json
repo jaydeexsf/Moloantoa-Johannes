@@ -15,7 +15,8 @@
     { "name": "Docker", "level": 60 },
     { "name": "Firebase", "level": 60 },
     { "name": "MongoDB", "level": 75 },
-    { "name": "PostgreSQL", "level": 65 }
+    { "name": "PostgreSQL", "level": 65 },
+    { "name": "MySQL", "level": 70 }
   ]
 }
 

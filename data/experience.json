@@ -1,0 +1,47 @@
+{
+  "work": [
+    {
+      "company": "HeyBassh",
+      "role": "Full Stack Developer",
+      "location": "United Arab Emirates",
+      "start": "Nov 2024",
+      "end": "Present",
+      "bullets": [
+        "Built custom full-stack web apps using React, NextJS, Node.js, and MongoDB.",
+        "Created and managed HubSpot modules with CRM and CMS integration.",
+        "Developed REST APIs with Node and Spring Boot.",
+        "Led migration to microservices architecture on AWS.",
+        "Mentored and supported developers during apprenticeship.",
+        "Designed 20+ AWS Lambda functions with shared Lambda layers, improving processing speed by 35% and reusability by 52%, saving approximately R3,000 per large-scale deployment."
+      ]
+    },
+    {
+      "company": "Freelance Web Developer",
+      "role": "Independent Contractor",
+      "location": "Remote",
+      "start": "May 2023",
+      "end": "Oct 2024",
+      "bullets": [
+        "Delivered custom websites using React, Firebase, and Node.js.",
+        "Integrated e-commerce, CMS, and payment solutions.",
+        "Improved SEO and performance across multiple client sites.",
+        "Maintained ongoing support and updates."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Limpopo",
+      "degree": "BSc in Mathematics and Computer Science (Not Complete)",
+      "start": "2022",
+      "end": "2024",
+      "bullets": [
+        "Coursework: Data Structures & Algorithms, Discrete Mathematics, Calculus I & II, Linear Algebra, Probability & Statistics, Computer Architecture, Operating Systems, and Programming (C++/Java).",
+        "Built small projects applying algorithmic problem solving and optimized data handling.",
+        "Transitioned to hands-on development work, frameworks, and industry-level training."
+      ]
+    }
+  ]
+}
+
+

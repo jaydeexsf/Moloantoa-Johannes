@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- SEO Meta Tags (populated dynamically) -->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="">
+  <meta property="twitter:title" content="">
+  <meta property="twitter:description" content="">
+  <meta property="twitter:image" content="">
+  
+  <title></title>
+  
+
+ 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='14' font-weight='bold' font-family='Arial' fill='%23149ddd'>B</text></svg>" type="image/svg+xml">
+
+</head>
+<body class="index-page">
+  <header style="background-color:#dbdddef9;;" id="header" class="header  d-flex flex-column ">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img id="profile-image" src="assets/img/MyImage.jpg" alt="" class=" shadow-lg mb-5 bg-body-tertiary rounded rounded-5">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+ 
+      
+      <h1 id="site-name" class="sitename text-dark"></h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a id="social-twitter" href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a id="social-instagram" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a id="social-linkedin" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a id="social-github" href="#" class="github"><i class="bi bi-github"></i></a>
+      <a id="social-website" href="#" class="globe"><i class="bi bi-globe2"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active " ><i class="bi bi-house navicon "></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/Polish_20230924_110415276.jpg" alt="" data-aos="fade-in" class="">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2 id="hero-name"></h2>
+        <p>I'm <span class="typed" id="hero-typed" data-typed-items="Full Stack Engineer,React/Next.js Developer,Node/Spring Developer">Full Stack Engineer</span></p>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section style="background-color: rgb(232, 237, 237);" id="about" class="about section ">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up light-background">
+        <h2>About</h2>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img id="profile-image" src="assets/img/profile.jpg" class="img-fluid rounded-2" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2 id="about-title">Full Stack Engineer.</h2>
+            <p class="fst-italic py-3">
+              <span id="about-text"></span>
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>City:</strong> <span id="about-city"></span></li>
+                  <li><i class="bi bi-trophy"></i> <strong>Achievement:</strong> <span>Best Learner in Mathematics (Grade 12) </span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>Phone:</strong> <span id="about-phone"></span></li>
+                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>Email:</strong> <span id="about-email"></span></li>
+                </ul>
+              </div>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    
+
+    <!-- Skills Section -->
+    <section style="background-color: rgb(247, 249, 249);" id="skills" class="skills section light-background">
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>    
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div id="skills-container" class="row skills-content skills-animation"></div>
+      </div>
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4 id="resume-name"></h4>
+              <p><em id="resume-summary"></em></p>
+              <ul>
+                <li id="resume-location"></li>
+                <li id="resume-phone"></li>
+                <li id="resume-email"></li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+            <h3 class="resume-title">Education</h3>
+            <div id="education-container"></div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div id="work-container"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section style="background-color: rgb(232, 237, 237);" id="portfolio" class="portfolio section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Projects</li>
+          </ul><!-- End Portfolio Filters -->
+          <div id="portfolio-container" class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200"></div>
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p id="contact-address"></p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p id="contact-phone"></p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p id="contact-email"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 card p-4">
+            <form id="contact-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name" class="pb-2">Your Name</label>
+                  <input type="text" name="from_name" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="reply_to" id="email" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="subject" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject" required>
+                </div>
+                <div class="col-md-12">
+                  <label for="message" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Sending message...</p>
+                  </div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit" class="send-message-btn">
+                    <span class="button-text">Send Message</span>
+                    <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="credits">
+        Designed & Developed by <span id="footer-name"></span>
+      </div>
+    </div>
+  </footer>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- EmailJS Configuration -->
+  <script>
+    (function() {
+      emailjs.init("tECf_IDq29of4crZm"); // Your EmailJS public key
+      
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+        
+        // Show loading
+        const loadingElement = this.querySelector('.loading');
+        const errorElement = this.querySelector('.error-message');
+        const successElement = this.querySelector('.sent-message');
+        const submitButton = this.querySelector('.send-message-btn');
+        
+        // Disable submit button and show loading
+        submitButton.disabled = true;
+        loadingElement.style.display = 'block';
+        errorElement.style.display = 'none';
+        successElement.style.display = 'none';
+        
+        emailjs.sendForm('service_i32f75d', 'template_5xoxn8g', this)
+          .then(function() {
+            // Hide loading and show success message
+            loadingElement.style.display = 'none';
+            successElement.style.display = 'block';
+            submitButton.disabled = false;
+            document.getElementById('contact-form').reset();
+          }, function(error) {
+            // Hide loading and show error message
+            loadingElement.style.display = 'none';
+            errorElement.style.display = 'block';
+            errorElement.innerHTML = 'Error sending message. Please try again.';
+            submitButton.disabled = false;
+            console.log('EmailJS error:', error);
+          });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

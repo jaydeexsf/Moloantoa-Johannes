@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "id": "offcampusrooms",
+      "title": "OffCampusRooms",
+      "stack": ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
+      "summary": "Platform connecting students with verified housing options with advanced search, filtering, and admin dashboard.",
+      "image": "assets/img/portfolio/inventory.png",
+      "url": "#",
+      "repo": "#",
+      "category": "Web App",
+      "client": "Internal Project",
+      "date": "2024",
+      "images": [
+        "assets/img/portfolio/inventory.png",
+        "assets/img/portfolio/inventory2.png",
+        "assets/img/portfolio/inventory3.png"
+      ],
+      "description": "Student housing marketplace with verified listings, advanced filtering, and admin CMS.",
+      "features": [
+        "Advanced search and filters",
+        "Admin dashboard with CRUD and media uploads",
+        "JWT authentication and role-based access control"
+      ],
+      "tech": ["React", "Express", "MongoDB", "JWT", "Cloud Storage"]
+    },
+    {
+      "id": "masjid-directory",
+      "title": "Masjid Directory & Salah Times",
+      "stack": ["NextJS", "NodeJS", "MongoDB", "Tailwind CSS"],
+      "summary": "Web platform for mosques to manage profiles, events, and Salah times with SEO and real-time updates.",
+      "image": "assets/img/portfolio/world.png",
+      "url": "#",
+      "repo": "#",
+      "category": "Platform",
+      "client": "Community",
+      "date": "2024",
+      "images": [
+        "assets/img/portfolio/world.png",
+        "assets/img/portfolio/world1.png",
+        "assets/img/portfolio/world3.png"
+      ],
+      "description": "Directory and schedule platform for mosques with SEO-optimized pages and events.",
+      "features": [
+        "Salah times management with real-time updates",
+        "Mosque profiles with images and location",
+        "Events creation and discovery"
+      ],
+      "tech": ["Next.js", "MongoDB", "TailwindCSS", "Server-side Rendering"]
+    }
+  ]
+}
+
+

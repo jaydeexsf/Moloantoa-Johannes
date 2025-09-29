@@ -1,0 +1,29 @@
+{
+  "name": "Johannes Ibrahim Moloantoa",
+  "title": "Full Stack Engineer",
+  "location": "South Africa",
+  "phone": "+27 79 492 0938",
+  "email": "jaydeexsf@gmail.com",
+  "website": "https://moloantoa-johannes.vercel.app",
+  "github": "https://github.com/jaydeexsf",
+  "linkedin": "https://www.linkedin.com/in/johannes-moloantoa-502409332/",
+  "twitter": "https://twitter.com/@jaydeexsf",
+  "about": "Full Stack Engineer with hands-on experience delivering end-to-end products using ReactJS, NextJS, NodeJS/ExpressJS, and Spring Boot. I design resilient APIs, integrate databases (MongoDB/PostgreSQL), and deploy to cloud environments with CI/CD. I’ve built and optimized AWS Lambda serverless functions (with shared layers) for performance and cost efficiency, and contributed to microservices migrations on AWS.",
+  "meta": {
+    "description": "Johannes Moloantoa - Full Stack Engineer Portfolio",
+    "keywords": "Johannes Moloantoa, Full Stack Engineer, React, Next.js, Node.js, South Africa",
+    "author": "Johannes Moloantoa",
+    "ogImage": "assets/img/profile.jpg"
+  },
+  "photo": "assets/img/MyImage.jpg",
+  "heroImage": "assets/img/Polish_20230924_110415276.jpg"
+,
+  "achievements": [
+    "Awarded Best Learner in Mathematics (Grade 12) for the entire circuit.",
+    "Designed 20+ AWS Lambda functions using shared layers; improved processing speed by 35% and reusability by 52%.",
+    "Led migration of services to a microservices architecture on AWS.",
+    "Mentored apprentice developers and established reusable full‑stack templates."
+  ]
+}
+
+

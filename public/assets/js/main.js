@@ -447,7 +447,7 @@
       // Hero typed update if present
       const typed = document.getElementById('hero-typed');
       if (typed) {
-        typed.setAttribute('data-typed-items', 'Full Stack Engineer,React/Next.js Developer,Node/Spring Developer');
+        typed.setAttribute('data-typed-items', 'Full Stack Engineer, Backend Developer, Problem Solver');
       }
 
       // Render lists

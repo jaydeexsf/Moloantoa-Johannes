@@ -499,7 +499,6 @@
       if (infoList) {
         infoList.innerHTML = `
           <li><i class="bi bi-bookmark-check"></i> <strong>Category:</strong> ${project.category || ''}</li>
-          <li><i class="bi bi-building"></i> <strong>Client:</strong> ${project.client || ''}</li>
           <li><i class="bi bi-calendar3"></i> <strong>Project Date:</strong> ${project.date || ''}</li>
           <li><i class="bi bi-envelope"></i> <strong>Contact:</strong> <a href="mailto:${(await fetchJson('data/contact.json')).email}">${(await fetchJson('data/contact.json')).email}</a></li>
           <li><i class="bi bi-github"></i> <strong>Repository:</strong> ${project.repo ? `<a href="${project.repo}" target="_blank">View Source Code</a>` : 'N/A'}</li>
@@ -523,7 +522,21 @@
       // Tech stack badges
       const techIcons = document.querySelector('.tech-stack .tech-icons');
       if (techIcons && project.tech) {
-        techIcons.innerHTML = project.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
+        const iconMap = {
+          'React': '<i class="bi bi-lightning-charge"></i>',
+          'ReactJS': '<i class="bi bi-lightning-charge"></i>',
+          'Next.js': '<i class="bi bi-box"></i>',
+          'NextJS': '<i class="bi bi-box"></i>',
+          'Express': '<i class="bi bi-node-plus"></i>',
+          'ExpressJS': '<i class="bi bi-node-plus"></i>',
+          'MongoDB': '<i class="bi bi-database"></i>',
+          'MySQL': '<i class="bi bi-database"></i>',
+          'TailwindCSS': '<i class="bi bi-brush"></i>',
+          'Bootstrap': '<i class="bi bi-bootstrap"></i>',
+          'JWT': '<i class="bi bi-shield-lock"></i>',
+          'Cloud Storage': '<i class="bi bi-cloud"></i>'
+        };
+        techIcons.innerHTML = project.tech.map(t => `<span class=\"tech-badge\">${iconMap[t] || '<i class=\"bi bi-gear\"></i>'} ${t}</span>`).join('');
       }
 
       // Re-init swiper

@@ -50,13 +50,13 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="/index.html#hero" class="active " ><i class="bi bi-house navicon "></i>Home</a></li>
-        <li><a href="/index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="/index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="/public/index.html#hero" class="active " ><i class="bi bi-house navicon "></i>Home</a></li>
+        <li><a href="/public/index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="/public/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="/public/index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         
         
-        <li><a href="/index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="/public/index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -146,6 +146,27 @@
               </div>
               <div class="swiper-pagination"></div>
             </div>
+
+            <!-- Technology Stack moved to bottom left (under slider) -->
+            <div class="tech-stack mt-5" data-aos="fade-up" data-aos-delay="350">
+              <h2>Technology Stack</h2>
+              <div class="tech-icons"></div>
+            </div>
+
+            <!-- Key Features moved under Tech Stack (left column) -->
+            <div class="features-grid mt-4" data-aos="fade-up" data-aos-delay="380">
+              <h2>Key Features</h2>
+              <div class="row g-4">
+                <!-- Will be replaced dynamically by JS with a bullet list when data is loaded -->
+                <div class="col-12">
+                  <ul>
+                    <li>Advanced search and filters</li>
+                    <li>Admin dashboard with CRUD and media uploads</li>
+                    <li>JWT authentication and role-based access control</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="col-lg-4">
@@ -154,7 +175,6 @@
               <div class="card-body">
                 <ul class="list-unstyled">
                   <li><i class="bi bi-bookmark-check"></i> <strong>Category:</strong> Inventory System</li>
-                  <li><i class="bi bi-building"></i> <strong>Client:</strong> Restaurant Chain</li>
                   <li><i class="bi bi-calendar3"></i> <strong>Project Date:</strong> March 20, 2023</li>
                   <li><i class="bi bi-envelope"></i> <strong>Contact:</strong> <a href="mailto:jaydeexsf@gmail.com">jaydeexsf@gmail.com</a></li>
                   <li><i class="bi bi-github"></i> <strong>Repository:</strong> <a href="#" target="_blank">View Source Code</a></li>
@@ -162,8 +182,9 @@
                 </ul>
               </div>
             </div>
+            
 
-            <div class="portfolio-description mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-description mt-4" data-aos="fade-up" data-aos-delay="320">
               <h2>Project Overview</h2>
               <p class="lead">
                 A comprehensive inventory management system designed for restaurants to streamline operations and improve efficiency.
@@ -174,84 +195,6 @@
             </div>
           </div>
 
-          <div class="col-lg-8">
-            <div class="features-grid" data-aos="fade-up" data-aos-delay="400">
-              <div class="row g-4">
-                <!-- User Management -->
-                <div class="col-md-6">
-                  <div class="feature-card">
-                    <div class="icon-box">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <h3>User Management</h3>
-                    <ul>
-                      <li>Role-based access control</li>
-                      <li>Secure authentication</li>
-                      <li>Profile customization</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Inventory Tracking -->
-                <div class="col-md-6">
-                  <div class="feature-card">
-                    <div class="icon-box">
-                      <i class="bi bi-box-seam"></i>
-                    </div>
-                    <h3>Inventory Tracking</h3>
-                    <ul>
-                      <li>Real-time stock updates</li>
-                      <li>Low-stock alerts</li>
-                      <li>Barcode scanning</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Order Management -->
-                <div class="col-md-6">
-                  <div class="feature-card">
-                    <div class="icon-box">
-                      <i class="bi bi-cart-check"></i>
-                    </div>
-                    <h3>Order Management</h3>
-                    <ul>
-                      <li>Order creation & tracking</li>
-                      <li>Fulfillment management</li>
-                      <li>Returns processing</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Reporting -->
-                <div class="col-md-6">
-                  <div class="feature-card">
-                    <div class="icon-box">
-                      <i class="bi bi-graph-up"></i>
-                    </div>
-                    <h3>Analytics & Reports</h3>
-                    <ul>
-                      <li>Inventory reports</li>
-                      <li>Sales analytics</li>
-                      <li>Performance metrics</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Technology Stack -->
-            <div class="tech-stack mt-5" data-aos="fade-up" data-aos-delay="500">
-              <h2>Technology Stack</h2>
-              <div class="tech-icons">
-                <span class="tech-badge"><i class="bi bi-filetype-html"></i> HTML5</span>
-                <span class="tech-badge"><i class="bi bi-filetype-css"></i> CSS3</span>
-                <span class="tech-badge"><i class="bi bi-filetype-js"></i> JavaScript</span>
-                <span class="tech-badge"><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                <span class="tech-badge"><i class="bi bi-database"></i> MySQL</span>
-                <span class="tech-badge"><i class="bi bi-git"></i> Git</span>
-              </div>
-            </div>
-          </div>
 
         </div>
 

@@ -32,16 +32,19 @@
       "title": "Masjid Directory & Salah Times",
       "stack": ["NextJS", "NodeJS", "MongoDB", "Tailwind CSS"],
       "summary": "Web platform for mosques to manage profiles, events, and Salah times with SEO and real-time updates.",
-      "image": "assets/img/portfolio/world.png",
-      "url": "http://dasjid-directory.vercel.app/",
+      "image": "assets/img/portfolio/masjidTheBigOneFrontPage.png",
+      "url": "http://masjid-directory.vercel.app/",
       "repo": "https://github.com/jaydeexsf/Masjid-Directory",
       "category": "Platform",
       "client": "Community",
       "date": "2024",
       "images": [
-        "assets/img/portfolio/world.png",
-        "assets/img/portfolio/world1.png",
-        "assets/img/portfolio/world3.png"
+        "assets/img/portfolio/masjid1.png",
+        "assets/img/portfolio/masjid2.png",
+        "assets/img/portfolio/masjid3.png",
+        "assets/img/portfolio/masjid4.png",
+        "assets/img/portfolio/masjid5.png",
+        "assets/img/portfolio/majid6.png"
       ],
       "description": "Directory and schedule platform for mosques with SEO-optimized pages and events.",
       "features": [

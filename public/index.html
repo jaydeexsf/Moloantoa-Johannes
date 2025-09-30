@@ -82,7 +82,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/Polish_20230924_110415276.jpg" alt="" data-aos="fade-in" class="">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <img src="assets/img/Polish_20230924_110415276.jpg" alt="" data-aos="fade-in" class="" style="display:none;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2 id="hero-name"></h2>
         <p>I'm <span class="typed" id="hero-typed" data-typed-items="Full Stack Engineer, Backend Developer, Problem Solver">Full Stack Engineer</span></p>
@@ -280,6 +281,10 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- Three.js + GSAP for hero background -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/hero-bg.js"></script>
 
   <!-- EmailJS Configuration -->
   <script>

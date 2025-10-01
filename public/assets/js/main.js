@@ -343,8 +343,10 @@
           <div class="portfolio-info">
             <h4>${p.title}</h4>
             <p>${p.summary || ''}</p>
-            <a href="${p.image}" title="${p.title}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            <a href="portfolio-details.html?id=${encodeURIComponent(p.id || p.title)}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-links">
+              <a href="${p.image}" title="${p.title}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html?id=${encodeURIComponent(p.id || p.title)}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
           </div>
         </div>
       `;

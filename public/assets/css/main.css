@@ -702,7 +702,6 @@ section,
 }
 
 .skill-badge:hover {
-  transform: translateY(-5px) scale(1.05);
   background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(0, 217, 255, 0.1) 100%);
   border-color: #00d9ff;
   box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
@@ -841,43 +840,58 @@ section,
 --------------------------------------------------------------*/
 .portfolio .portfolio-filters {
   padding: 0;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 40px auto;
   list-style: none;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .portfolio .portfolio-filters li {
   cursor: pointer;
-  display: inline-block;
-  padding: 12px 30px;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 35px;
+  font-size: 15px;
   font-weight: 600;
-  margin: 0 10px;
-  line-height: 1;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  border-radius: 25px;
-  background: rgba(0, 217, 255, 0.05);
-  border: 2px solid rgba(0, 217, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 217, 255, 0.08);
+  border: 2px solid rgba(0, 217, 255, 0.3);
   color: #ffffff;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-filters li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.portfolio .portfolio-filters li:hover::before {
+  left: 100%;
 }
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
   color: #000000;
-  background: #00d9ff;
+  background: linear-gradient(135deg, #00d9ff 0%, #00b8d4 100%);
   border-color: #00d9ff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.5);
 }
 
 @media (max-width: 575px) {
@@ -979,10 +993,14 @@ section,
 
 /* Responsive Portfolio */
 @media (max-width: 992px) {
+  .portfolio .portfolio-filters {
+    gap: 12px;
+  }
+  
   .portfolio .portfolio-filters li {
     font-size: 14px;
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 12px 28px;
+    min-width: 110px;
   }
   
   .portfolio .portfolio-content .portfolio-info h4 {
@@ -1004,13 +1022,14 @@ section,
 
 @media (max-width: 768px) {
   .portfolio .portfolio-filters {
-    margin: 0 auto 20px auto;
+    margin: 0 auto 30px auto;
+    gap: 10px;
   }
   
   .portfolio .portfolio-filters li {
     font-size: 13px;
-    padding: 8px 16px;
-    margin: 5px;
+    padding: 10px 24px;
+    min-width: 100px;
   }
   
   .portfolio .portfolio-content {
@@ -1042,12 +1061,15 @@ section,
 }
 
 @media (max-width: 480px) {
+  .portfolio .portfolio-filters {
+    gap: 8px;
+  }
+  
   .portfolio .portfolio-filters li {
     font-size: 12px;
-    padding: 6px 12px;
-    margin: 3px;
-    display: block;
-    width: calc(50% - 6px);
+    padding: 10px 20px;
+    min-width: 90px;
+    flex: 0 1 calc(50% - 8px);
   }
   
   .portfolio .portfolio-content {
@@ -1673,4 +1695,9 @@ body, main, section {
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #149ddd !important;
   opacity: 1 !important;
+}
+
+.portfolio-links {
+  display: flex;
+  gap: 10px;
 }

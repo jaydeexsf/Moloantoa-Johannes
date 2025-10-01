@@ -1,5 +1,5 @@
-// Three.js hero background: parametric line mesh (torus grid) + subtle particles
-// Black background, semi-transparent white lines, slow rotation, responsive
+// Three.js Hero Background with Floating Math & Code Expressions
+// Features: Animated mathematical formulas and programming code snippets
 
 (() => {
   const canvas = document.getElementById('hero-canvas');
@@ -9,107 +9,202 @@
   const width = hero.clientWidth;
   const height = hero.clientHeight;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  // Initialize renderer
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: true
+  });
+  
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(width, height);
-  renderer.setClearColor(0x000000, 1); // black background
+  renderer.setClearColor(0x000000, 1);
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-  camera.position.set(0, 0, 7.5);
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  camera.position.z = 30;
 
-  // Parametric torus grid lines
-  // Torus parameters
-  const R = 2.4; // major radius
-  const r = 1.2; // minor radius
-  const segU = 240; // along ring
-  const segV = 120; // around tube
+  // Mathematical and Programming Expressions
+  const expressions = [
+    // Mathematical expressions
+    "∫f(x)dx", "∂f/∂x", "∑(n=1→∞)", "lim(x→∞)", "∇·F = ρ",
+    "e^(iπ) + 1 = 0", "∫∫∫ dV", "dy/dx", "f'(x)", "∂²u/∂t²",
+    "√(a² + b²)", "sin(θ)", "cos(φ)", "tan(α)", "log₂(n)",
+    "Σ x²", "∏ aᵢ", "∞", "π", "∆x", "λ", "μ", "σ²",
+    
+    // Programming expressions
+    "function()", "const x = 10", "if (true) {}", "for (i=0)", 
+    "return data", "async/await", "=> { }", "map()", "filter()",
+    "reduce()", "Promise", "try/catch", "class {}", "import",
+    "export", "let arr = []", "while()", "switch", "break",
+    "continue", "typeof", "instanceof", "new Object", "null",
+    "undefined", "console.log", "fetch()", "JSON.parse",
+    "Array.from", "Object.keys", "setTimeout", "callback",
+    
+    // Code symbols
+    "{ }", "[ ]", "( )", "< >", "=>", "&&", "||", "===",
+    "!==", "++", "--", "+=", "-=", "*=", "/=", "...", "?:",
+    
+    // More math
+    "∀x ∈ ℝ", "∃y", "⊂", "⊆", "∪", "∩", "∈", "∉",
+    "≤", "≥", "≠", "≈", "∝", "∞", "∅", "ℕ", "ℤ", "ℚ", "ℝ", "ℂ"
+  ];
 
-  function torusPoint(u, v, out) {
-    const cu = Math.cos(u), su = Math.sin(u);
-    const cv = Math.cos(v), sv = Math.sin(v);
-    const x = (R + r * cv) * cu;
-    const y = (R + r * cv) * su;
-    const z = r * sv;
-    out[0] = x; out[1] = y; out[2] = z;
+  // Create floating text sprites
+  const textObjects = [];
+  
+  function createTextSprite(text) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    
+    // Set canvas size
+    canvas.width = 512;
+    canvas.height = 128;
+    
+    // Style text
+    context.font = 'bold 48px "Courier New", monospace';
+    context.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    
+    // Add glow effect
+    context.shadowColor = '#00d9ff';
+    context.shadowBlur = 20;
+    
+    // Draw text
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+    
+    // Create texture from canvas
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.needsUpdate = true;
+    
+    // Create sprite material
+    const material = new THREE.SpriteMaterial({
+      map: texture,
+      transparent: true,
+      opacity: 0.7,
+      blending: THREE.AdditiveBlending
+    });
+    
+    const sprite = new THREE.Sprite(material);
+    
+    // Random size
+    const scale = Math.random() * 2 + 1;
+    sprite.scale.set(scale * 4, scale, 1);
+    
+    // Random position in 3D space
+    sprite.position.x = (Math.random() - 0.5) * 80;
+    sprite.position.y = (Math.random() - 0.5) * 50;
+    sprite.position.z = (Math.random() - 0.5) * 60;
+    
+    // Store velocity for animation
+    sprite.userData.velocity = {
+      x: (Math.random() - 0.5) * 0.02,
+      y: (Math.random() - 0.5) * 0.02,
+      z: (Math.random() - 0.5) * 0.02
+    };
+    
+    sprite.userData.rotationSpeed = (Math.random() - 0.5) * 0.01;
+    
+    return sprite;
   }
 
-  // Build line segments for grid (both directions) in a single BufferGeometry
-  const segments = (segU * (segV - 1)) + (segV * (segU - 1));
-  const positions = new Float32Array(segments * 2 * 3); // two points per segment
-  let ptr = 0;
+  // Create multiple text objects
+  expressions.forEach(expr => {
+    const sprite = createTextSprite(expr);
+    scene.add(sprite);
+    textObjects.push(sprite);
+  });
 
-  // Lines along U (wrap V)
-  for (let j = 0; j < segV; j++) {
-    const v = (j / (segV - 1)) * Math.PI * 2;
-    let prev = new Float32Array(3);
-    torusPoint(0, v, prev);
-    for (let i = 1; i < segU; i++) {
-      const u = (i / (segU - 1)) * Math.PI * 2;
-      const curr = new Float32Array(3);
-      torusPoint(u, v, curr);
-      positions[ptr++] = prev[0]; positions[ptr++] = prev[1]; positions[ptr++] = prev[2];
-      positions[ptr++] = curr[0]; positions[ptr++] = curr[1]; positions[ptr++] = curr[2];
-      prev = curr;
+  // Particle system for extra ambiance
+  function createParticles() {
+    const particleCount = 1000;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+      const i3 = i * 3;
+      positions[i3] = (Math.random() - 0.5) * 100;
+      positions[i3 + 1] = (Math.random() - 0.5) * 100;
+      positions[i3 + 2] = (Math.random() - 0.5) * 100;
+      
+      // Blue-cyan color palette
+      colors[i3] = 0.2 + Math.random() * 0.3;
+      colors[i3 + 1] = 0.5 + Math.random() * 0.5;
+      colors[i3 + 2] = 0.8 + Math.random() * 0.2;
     }
+    
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    
+    const material = new THREE.PointsMaterial({
+      size: 0.15,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.6,
+      blending: THREE.AdditiveBlending
+    });
+    
+    const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+    return particles;
   }
 
-  // Lines along V (wrap U)
-  for (let i = 0; i < segU; i++) {
-    const u = (i / (segU - 1)) * Math.PI * 2;
-    let prev = new Float32Array(3);
-    torusPoint(u, 0, prev);
-    for (let j = 1; j < segV; j++) {
-      const v = (j / (segV - 1)) * Math.PI * 2;
-      const curr = new Float32Array(3);
-      torusPoint(u, v, curr);
-      positions[ptr++] = prev[0]; positions[ptr++] = prev[1]; positions[ptr++] = prev[2];
-      positions[ptr++] = curr[0]; positions[ptr++] = curr[1]; positions[ptr++] = curr[2];
-      prev = curr;
-    }
-  }
+  const particles = createParticles();
 
-  const gridGeo = new THREE.BufferGeometry();
-  gridGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const gridMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.2 });
-  const grid = new THREE.LineSegments(gridGeo, gridMat);
-  scene.add(grid);
-
-  // Subtle particle field in the background
-  const particleCount = 900;
-  const pPos = new Float32Array(particleCount * 3);
-  for (let i = 0; i < particleCount; i++) {
-    pPos[i * 3 + 0] = (Math.random() - 0.5) * 18;
-    pPos[i * 3 + 1] = (Math.random() - 0.5) * 10;
-    pPos[i * 3 + 2] = -2 - Math.random() * 6;
-  }
-  const pGeo = new THREE.BufferGeometry();
-  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-  const pMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.015, transparent: true, opacity: 0.12 });
-  const particles = new THREE.Points(pGeo, pMat);
-  scene.add(particles);
-
-  // Animation
-  let t = 0;
+  // Animation loop
+  let time = 0;
+  
   function animate() {
-    t += 0.005;
-    grid.rotation.x = Math.sin(t * 0.25) * 0.15 + 0.25;
-    grid.rotation.y += 0.0025; // slow spin
-    particles.rotation.y -= 0.0008;
-    renderer.render(scene, camera);
     requestAnimationFrame(animate);
+    time += 0.01;
+    
+    // Animate text sprites
+    textObjects.forEach((sprite, index) => {
+      // Move sprites
+      sprite.position.x += sprite.userData.velocity.x;
+      sprite.position.y += sprite.userData.velocity.y;
+      sprite.position.z += sprite.userData.velocity.z;
+      
+      // Boundary check and wrap around
+      if (Math.abs(sprite.position.x) > 40) sprite.userData.velocity.x *= -1;
+      if (Math.abs(sprite.position.y) > 25) sprite.userData.velocity.y *= -1;
+      if (Math.abs(sprite.position.z) > 30) sprite.userData.velocity.z *= -1;
+      
+      // Subtle rotation
+      sprite.material.rotation += sprite.userData.rotationSpeed;
+      
+      // Pulsing opacity
+      sprite.material.opacity = 0.5 + Math.sin(time + index * 0.1) * 0.3;
+    });
+    
+    // Rotate particle system slowly
+    particles.rotation.y += 0.0005;
+    particles.rotation.x += 0.0002;
+    
+    // Gentle camera movement
+    camera.position.x = Math.sin(time * 0.1) * 2;
+    camera.position.y = Math.cos(time * 0.15) * 1;
+    camera.lookAt(0, 0, 0);
+    
+    renderer.render(scene, camera);
   }
 
-  function resize() {
-    const w = hero.clientWidth;
-    const h = hero.clientHeight;
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
+  // Handle window resize
+  function onWindowResize() {
+    const width = hero.clientWidth;
+    const height = hero.clientHeight;
+    
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
   }
-  window.addEventListener('resize', resize);
-  resize();
-  requestAnimationFrame(animate);
+  
+  window.addEventListener('resize', onWindowResize);
+  
+  // Start animation
+  animate();
 })();
 
 

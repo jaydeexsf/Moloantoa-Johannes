@@ -90,9 +90,9 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  position: fixed;
+  color: #ffffff;
+  background-color: #000000;
+  position: fixed !important;
   top: 0;
   left: 0;
   bottom: 0;
@@ -100,8 +100,9 @@ h6 {
   width: 300px;
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid #00d9ff;
 }
 
 .header .profile-img img {
@@ -125,7 +126,7 @@ h6 {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: #ffffff;
 }
 
 .header .social-links {
@@ -137,8 +138,8 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  color: var(--default-color);
+  background: rgba(0, 217, 255, 0.1);
+  color: #ffffff;
   margin: 0 2px;
   border-radius: 50%;
   text-align: center;
@@ -148,8 +149,8 @@ h6 {
 }
 
 .header .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: #000000;
+  background: #00d9ff;
 }
 
 @media (min-width: 1200px) {
@@ -256,7 +257,7 @@ h6 {
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus {
-  color: black;
+  color: #00d9ff;
 }
 
 .navmenu a:hover .navicon,
@@ -743,6 +744,30 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+/* Dark background styles for resume section */
+.resume.dark-background .resume-item h4 {
+  color: #ffffff;
+}
+
+.resume.dark-background .resume-item h5 {
+  color: #00d9ff;
+  background: rgba(0, 217, 255, 0.1);
+}
+
+.resume.dark-background .resume-item p,
+.resume.dark-background .resume-item em {
+  color: #e0e0e0;
+}
+
+.resume.dark-background .resume-item ul li {
+  color: #e0e0e0;
+}
+
+.resume.dark-background .resume-item::before {
+  background: #000000;
+  border: 2px solid #00d9ff;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1107,13 +1132,45 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
+/* Dark background styles for contact section */
+.contact.dark-background label {
+  color: #ffffff;
+}
+
+.contact.dark-background .form-control {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #ffffff;
+}
+
+.contact.dark-background .form-control:focus {
+  background-color: #2a2a2a;
+  border-color: #00d9ff;
+  color: #ffffff;
+}
+
+.contact.dark-background .form-control::placeholder {
+  color: #888;
+}
+
+.contact.dark-background .loading p {
+  color: #ffffff;
+}
+
+.contact.dark-background .error-message {
+  color: #ff6b6b;
+}
+
+.contact.dark-background .sent-message {
+  color: #00d9ff;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
-
 .portfolio-details .portfolio-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;

@@ -46,34 +46,33 @@
 
 </head>
 <body class="index-page">
-  <header style="background-color:#dbdddef9;;" id="header" class="header  d-flex flex-column ">
+  <header id="header" class="header d-flex flex-column">
+    <canvas id="sidebar-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img id="profile-image" src="assets/img/MyImage.jpg" alt="" class=" shadow-lg mb-5 bg-body-tertiary rounded rounded-5">
+    <div class="profile-img" style="position: relative; z-index: 1;">
+      <img id="profile-image" src="assets/img/MyImage.jpg" alt="" class="shadow-lg mb-5 rounded rounded-5" style="border: 3px solid #00d9ff;">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
- 
-      
-      <h1 id="site-name" class="sitename text-dark"></h1>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center" style="position: relative; z-index: 1;">
+      <h1 id="site-name" class="sitename" style="color: #ffffff;"></h1>
     </a>
 
-    <div class="social-links text-center">
-      <a id="social-twitter" href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a id="social-instagram" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a id="social-linkedin" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a id="social-github" href="#" class="github"><i class="bi bi-github"></i></a>
-      <a id="social-website" href="#" class="globe"><i class="bi bi-globe2"></i></a>
+    <div class="social-links text-center" style="position: relative; z-index: 1;">
+      <a id="social-twitter" href="#" class="twitter" style="color: #ffffff;"><i class="bi bi-twitter-x"></i></a>
+      <a id="social-instagram" href="#" class="instagram" style="color: #ffffff;"><i class="bi bi-instagram"></i></a>
+      <a id="social-linkedin" href="#" class="linkedin" style="color: #ffffff;"><i class="bi bi-linkedin"></i></a>
+      <a id="social-github" href="#" class="github" style="color: #ffffff;"><i class="bi bi-github"></i></a>
+      <a id="social-website" href="#" class="globe" style="color: #ffffff;"><i class="bi bi-globe2"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" style="position: relative; z-index: 1;">
       <ul>
-        <li><a href="#hero" class="active " ><i class="bi bi-house navicon "></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#hero" class="active" style="color: #ffffff;"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about" style="color: #ffffff;"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume" style="color: #ffffff;"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio" style="color: #ffffff;"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#contact" style="color: #ffffff;"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -139,30 +138,30 @@
     </section><!-- /Skills Section -->
 
     <!-- Resume Section -->
-    <section id="resume" class="resume section">
+    <section id="resume" class="resume section dark-background" style="background-color: #000000;">
     <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
+        <h2 style="color: #ffffff;">Resume</h2>
         <p></p>
       </div><!-- End Section Title -->
       <div class="container">
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
+            <h3 class="resume-title" style="color: #ffffff;">Sumary</h3>
             <div class="resume-item pb-0">
-              <h4 id="resume-name"></h4>
-              <p><em id="resume-summary"></em></p>
-              <ul>
+              <h4 id="resume-name" style="color: #ffffff;"></h4>
+              <p style="color: #e0e0e0;"><em id="resume-summary"></em></p>
+              <ul style="color: #e0e0e0;">
                 <li id="resume-location"></li>
                 <li id="resume-phone"></li>
                 <li id="resume-email"></li>
               </ul>
             </div><!-- Edn Resume Item -->
-            <h3 class="resume-title">Education</h3>
+            <h3 class="resume-title" style="color: #ffffff;">Education</h3>
             <div id="education-container"></div>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
+            <h3 class="resume-title" style="color: #ffffff;">Professional Experience</h3>
             <div id="work-container"></div>
           </div>
         </div>
@@ -186,38 +185,38 @@
       </div>
     </section><!-- /Portfolio Section -->
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section dark-background" style="background-color: #000000;">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
+        <h2 style="color: #ffffff;">Contact</h2>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <div class="col-lg-5">
             <div class="info-wrap">
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <i class="bi bi-geo-alt flex-shrink-0" style="color: #00d9ff;"></i>
                 <div>
-                  <h3>Address</h3>
-                  <p id="contact-address"></p>
+                  <h3 style="color: #ffffff;">Address</h3>
+                  <p id="contact-address" style="color: #e0e0e0;"></p>
                 </div>
               </div>
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
+                <i class="bi bi-telephone flex-shrink-0" style="color: #00d9ff;"></i>
                 <div>
-                  <h3>Call Us</h3>
-                  <p id="contact-phone"></p>
+                  <h3 style="color: #ffffff;">Call Us</h3>
+                  <p id="contact-phone" style="color: #e0e0e0;"></p>
                 </div>
               </div>
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
+                <i class="bi bi-envelope flex-shrink-0" style="color: #00d9ff;"></i>
                 <div>
-                  <h3>Email Us</h3>
-                  <p id="contact-email"></p>
+                  <h3 style="color: #ffffff;">Email Us</h3>
+                  <p id="contact-email" style="color: #e0e0e0;"></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-7 card p-4">
+          <div class="col-lg-7 card p-4" style="background-color: #1a1a1a; border: 1px solid #333;">
             <form id="contact-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
                 <div class="col-md-6">
@@ -285,6 +284,7 @@
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
   <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="assets/js/hero-bg.js"></script>
+  <script src="assets/js/sidebar-bg.js"></script>
 
   <!-- EmailJS Configuration -->
   <script>

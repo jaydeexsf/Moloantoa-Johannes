@@ -85,37 +85,52 @@
       <img src="assets/img/Polish_20230924_110415276.jpg" alt="" data-aos="fade-in" class="" style="display:none;">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2 id="hero-name"></h2>
-        <p>I'm <span class="typed" id="hero-typed" data-typed-items="Full Stack Engineer, Backend Developer, Problem Solver">Full Stack Engineer</span></p>
+        <p>I'm a<span class="typed" id="hero-typed" data-typed-items="Full Stack Engineer, Backend Developer, Problem Solver">Full Stack Engineer</span></p>
       </div>
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section style="background-color: rgb(232, 237, 237);" id="about" class="about section ">
+    <section style="background-color: #000000;" id="about" class="about section dark-background">
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up light-background">
-        <h2>About</h2>
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #ffffff;">About Me</h2>
+        <p style="color: #00d9ff; font-size: 18px; margin-top: 10px;">Get to know more about my journey</p>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img id="profile-image" src="assets/img/profile.jpg" class="img-fluid rounded-2" alt="">
+            <div class="about-img-wrapper" style="position: relative; border: 3px solid #00d9ff; border-radius: 15px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);">
+              <img id="profile-image" src="assets/img/profile.jpg" class="img-fluid" alt="" style="width: 100%; display: block;">
+            </div>
           </div>
           <div class="col-lg-8 content">
-            <h2 id="about-title">Full Stack Engineer.</h2>
-            <p class="fst-italic py-3">
+            <h2 id="about-title" style="color: #ffffff; font-size: 32px; margin-bottom: 20px;">Full Stack Engineer.</h2>
+            <p class="fst-italic py-3" style="color: #e0e0e0; font-size: 16px; line-height: 1.8;">
               <span id="about-text"></span>
             </p>
-            <div class="row">
+            <div class="row" style="margin-top: 30px;">
               <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>City:</strong> <span id="about-city"></span></li>
-                  <li><i class="bi bi-trophy"></i> <strong>Achievement:</strong> <span>Best Learner in Mathematics (Grade 12) </span></li>
+                <ul style="list-style: none; padding: 0;">
+                  <li style="color: #e0e0e0; margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;">
+                    <i class="bi bi-geo-alt" style="color: #00d9ff; margin-right: 10px; font-size: 20px;"></i>
+                    <strong style="color: #ffffff;">City:</strong> <span id="about-city"></span>
+                  </li>
+                  <li style="color: #e0e0e0; margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;">
+                    <i class="bi bi-trophy" style="color: #00d9ff; margin-right: 10px; font-size: 20px;"></i>
+                    <strong style="color: #ffffff;">Achievement:</strong> <span>Best Learner in Mathematics (Grade 12)</span>
+                  </li>
                 </ul>
               </div>
               <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>Phone:</strong> <span id="about-phone"></span></li>
-                  <li><i class="bi bi-chevron-bar-expand"></i> <strong>Email:</strong> <span id="about-email"></span></li>
+                <ul style="list-style: none; padding: 0;">
+                  <li style="color: #e0e0e0; margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;">
+                    <i class="bi bi-telephone" style="color: #00d9ff; margin-right: 10px; font-size: 20px;"></i>
+                    <strong style="color: #ffffff;">Phone:</strong> <span id="about-phone"></span>
+                  </li>
+                  <li style="color: #e0e0e0; margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;">
+                    <i class="bi bi-envelope" style="color: #00d9ff; margin-right: 10px; font-size: 20px;"></i>
+                    <strong style="color: #ffffff;">Email:</strong> <span id="about-email"></span>
+                  </li>
                 </ul>
               </div>
             </div>   
@@ -127,10 +142,11 @@
     
 
     <!-- Skills Section -->
-    <section style="background-color: rgb(247, 249, 249);" id="skills" class="skills section light-background">
+    <section style="background-color: #0a0a1a;" id="skills" class="skills section dark-background">
     <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>    
+        <h2 style="color: #ffffff;">Technical Skills</h2>
+        <p style="color: #00d9ff; font-size: 18px; margin-top: 10px;">Technologies I work with</p>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div id="skills-container" class="row skills-content skills-animation"></div>
@@ -169,10 +185,11 @@
     </section><!-- /Resume Section -->
 
     <!-- Portfolio Section -->
-    <section style="background-color: rgb(232, 237, 237);" id="portfolio" class="portfolio section light-background">
+    <section style="background-color: #0a0a1a;" id="portfolio" class="portfolio section dark-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2 style="color: #ffffff;">My Projects</h2>
+        <p style="color: #00d9ff; font-size: 18px; margin-top: 10px;">Showcasing my recent work and achievements</p>
       </div><!-- End Section Title -->
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">

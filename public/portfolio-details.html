@@ -22,63 +22,58 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
   
 </head>
 
 <body class="portfolio-details-page">
 
-  <header style="background-color: #dbddde9d;;" id="header" class="header  d-flex flex-column ">
+  <header id="header" class="header d-flex flex-column">
+    <canvas id="sidebar-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="assets/img/MyImage.jpg" alt="" class=" shadow-lg mb-5 bg-body-tertiary rounded rounded-5">
+    <div class="profile-img" style="position: relative; z-index: 1;">
+      <img src="assets/img/MyImage.jpg" alt="" class="shadow-lg mb-5 rounded rounded-5" style="border: 3px solid #00d9ff;">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename text-dark">Johannes Moloantoa</h1>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center" style="position: relative; z-index: 1;">
+      <h1 class="sitename" style="color: #ffffff;">Johannes Moloantoa</h1>
     </a>
 
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/johannes-moloantoa-502409332/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a id="social-websit" href="https://moloantoa-johannes.vercel.app" class="globe"><i class="bi bi-globe2"></i></a>
+    <div class="social-links text-center" style="position: relative; z-index: 1;">
+      <a href="#" class="twitter" style="color: #ffffff;"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="instagram" style="color: #ffffff;"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/johannes-moloantoa-502409332/" class="linkedin" style="color: #ffffff;"><i class="bi bi-linkedin"></i></a>
+      <a id="social-websit" href="https://moloantoa-johannes.vercel.app" class="globe" style="color: #ffffff;"><i class="bi bi-globe2"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" style="position: relative; z-index: 1;">
       <ul>
-        <li><a href="/public/index.html#hero" class="active " ><i class="bi bi-house navicon "></i>Home</a></li>
-        <li><a href="/public/index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="/public/index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="/public/index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        
-        
-        <li><a href="/public/index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="index.html#hero" style="color: #ffffff;"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about" style="color: #ffffff;"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume" style="color: #ffffff;"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio" class="active" style="color: #ffffff;"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#contact" style="color: #ffffff;"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
   </header>
 
   <main class="main">
-
     <!-- Page Title -->
-    <div style="background-color: #dbdddecb;;" class=" page-title dark-background">
+    <div style="background-color: #000000; padding: 60px 0;" class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0 text-dark">Portfolio</h1>
+        <h1 class="mb-2 mb-lg-0" style="color: #ffffff; font-size: 42px;">Portfolio Details</h1>
         <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current text-dark">Portfolio Details</li>
+          <ol style="display: flex; gap: 10px; list-style: none; margin: 0; padding: 0;">
+            <li><a href="index.html" style="color: #00d9ff; text-decoration: none;">Home</a></li>
+            <li class="current" style="color: #e0e0e0;">Portfolio Details</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
     <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <section id="portfolio-details" class="portfolio-details section" style="background-color: #0a0a1a; padding: 80px 0;">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -148,21 +143,21 @@
             </div>
 
             <!-- Technology Stack moved to bottom left (under slider) -->
-            <div class="tech-stack mt-5" data-aos="fade-up" data-aos-delay="350">
-              <h2>Technology Stack</h2>
+            <div class="tech-stack mt-5" data-aos="fade-up" data-aos-delay="350" style="background: rgba(0, 217, 255, 0.05); padding: 30px; border-radius: 15px; border: 2px solid rgba(0, 217, 255, 0.2);">
+              <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 28px;">Technology Stack</h2>
               <div class="tech-icons"></div>
             </div>
 
             <!-- Key Features moved under Tech Stack (left column) -->
-            <div class="features-grid mt-4" data-aos="fade-up" data-aos-delay="380">
-              <h2>Key Features</h2>
-              <div class="row g-4">
+            <div class="features-grid mt-4" data-aos="fade-up" data-aos-delay="380" style="background: rgba(0, 217, 255, 0.05); padding: 30px; border-radius: 15px; border: 2px solid rgba(0, 217, 255, 0.2);">
+              <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 28px;">Key Features</h2>
+              <div class="row g-4 " style="color: #ffffffe0;">
                 <!-- Will be replaced dynamically by JS with a bullet list when data is loaded -->
                 <div class="col-12">
-                  <ul>
-                    <li>Advanced search and filters</li>
-                    <li>Admin dashboard with CRUD and media uploads</li>
-                    <li>JWT authentication and role-based access control</li>
+                  <ul style="color: #ffffff; line-height: 2; font-size: 16px;">
+                    <li style="color: #ffffff;">Advanced search and filters</li>
+                    <li style="color: #ffffff;">Admin dashboard with CRUD and media uploads</li>
+                    <li style="color: #ffffff;">JWT authentication and role-based access control</li>
                   </ul>
                 </div>
               </div>
@@ -170,26 +165,26 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info card" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="card-header">Project Information</h3>
-              <div class="card-body">
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-bookmark-check"></i> <strong>Category:</strong> Inventory System</li>
-                  <li><i class="bi bi-calendar3"></i> <strong>Project Date:</strong> March 20, 2023</li>
-                  <li><i class="bi bi-envelope"></i> <strong>Contact:</strong> <a href="mailto:jaydeexsf@gmail.com">jaydeexsf@gmail.com</a></li>
-                  <li><i class="bi bi-github"></i> <strong>Repository:</strong> <a href="#" target="_blank">View Source Code</a></li>
-                  <li><i class="bi bi-globe"></i> <strong>Live Demo:</strong> <a href="#" target="_blank">View Demo</a></li>
+            <div class="portfolio-info card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(0, 217, 255, 0.05); border: 2px solid rgba(0, 217, 255, 0.2); border-radius: 15px;">
+              <h3 class="card-header" style="background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%); color: #ffffff; border-radius: 13px 13px 0 0; padding: 20px; font-size: 24px;">Project Information</h3>
+              <div class="card-body" style="padding: 25px;">
+                <ul class="list-unstyled" style="color: #e0e0e0;">
+                  <li style="margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;"><i class="bi bi-bookmark-check" style="color: #00d9ff; margin-right: 10px;"></i> <strong style="color: #ffffff;">Category:</strong> Inventory System</li>
+                  <li style="margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;"><i class="bi bi-calendar3" style="color: #00d9ff; margin-right: 10px;"></i> <strong style="color: #ffffff;">Project Date:</strong> March 20, 2023</li>
+                  <li style="margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;"><i class="bi bi-envelope" style="color: #00d9ff; margin-right: 10px;"></i> <strong style="color: #ffffff;">Contact:</strong> <a href="mailto:jaydeexsf@gmail.com" style="color: #00d9ff;">jaydeexsf@gmail.com</a></li>
+                  <li style="margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;"><i class="bi bi-github" style="color: #00d9ff; margin-right: 10px;"></i> <strong style="color: #ffffff;">Repository:</strong> <a href="#" target="_blank" style="color: #00d9ff;">View Source Code</a></li>
+                  <li style="margin-bottom: 15px; padding: 10px; background: rgba(0, 217, 255, 0.05); border-left: 3px solid #00d9ff; border-radius: 5px;"><i class="bi bi-globe" style="color: #00d9ff; margin-right: 10px;"></i> <strong style="color: #ffffff;">Live Demo:</strong> <a href="#" target="_blank" style="color: #00d9ff;">View Demo</a></li>
                 </ul>
               </div>
             </div>
             
 
-            <div class="portfolio-description mt-4" data-aos="fade-up" data-aos-delay="320">
-              <h2>Project Overview</h2>
-              <p class="lead">
+            <div class="portfolio-description mt-4" data-aos="fade-up" data-aos-delay="320" style="background: rgba(0, 217, 255, 0.05); padding: 30px; border-radius: 15px; border: 2px solid rgba(0, 217, 255, 0.2);">
+              <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 28px;">Project Overview</h2>
+              <p class="lead" style="color: #e0e0e0; font-size: 18px; line-height: 1.8; margin-bottom: 15px;">
                 A comprehensive inventory management system designed for restaurants to streamline operations and improve efficiency.
               </p>
-              <p>
+              <p style="color: #e0e0e0; line-height: 1.8; font-size: 16px;">
                 This system helps businesses track stock levels, manage orders, and ensure smooth operations. It reduces manual errors while improving accuracy and overall productivity.
               </p>
             </div>
@@ -204,13 +199,12 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer position-relative" style="background-color: #000000; padding: 30px 0; border-top: 2px solid #00d9ff;">
 
     <div class="container">
       
-      <div class="credits">
+      <div class="credits" style="text-align: center; color: #e0e0e0;">
        
-        Designed by <a href="#">Johannes Moloantoa</a> 
       </div>
     </div>
 
@@ -236,6 +230,10 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <!-- Three.js for sidebar background -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="assets/js/sidebar-bg.js"></script>
 
 </body>
 

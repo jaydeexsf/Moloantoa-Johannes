@@ -59,14 +59,14 @@
       "title": "University Email Verifier",
       "stack": ["NodeJS", "ExpressJS", "Nodemailer", "MongoDB"],
       "summary": "Backend Node.js and Express project that automatically generates possible university email combinations and sends verification emails.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&crop=center",
       "url": "",
       "repo": "https://github.com/jaydeexsf/university-email-verifier",
       "category": "BACKEND",
       "client": "Personal Project",
       "date": "2024",
       "images": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center"
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&crop=center"
       ],
       "description": "A backend Node.js and Express project that automatically generates possible university email combinations (e.g. 202219525@myturf.ul.ac.za), sends verification emails via Nodemailer, and stores only valid addresses in MongoDB.",
       "features": [
@@ -82,14 +82,14 @@
       "title": "Al-Qur'an API (Open Source Contribution)",
       "stack": ["NodeJS", "ExpressJS", "MongoDB"],
       "summary": "Contributed to the open-source Al-Qur'an API project, which provides developers with access to Qur'an text, translations, and audio recitations.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
-      "url": "https://github.com/jaydeexsf/al-quran-api",
+      "image": "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop&crop=center",
+      "url": "https://furqan-api.vercel.app",
       "repo": "https://github.com/jaydeexsf/al-quran-api",
       "category": "CONTRIBUTION",
       "client": "Open Source",
       "date": "2024",
       "images": [
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center"
+        "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop&crop=center"
       ],
       "description": "Contributed to the open-source Al-Qur'an API project, which provides developers with access to Qur'an text, translations, and audio recitations. Helped improve backend performance and API structure.",
       "features": [

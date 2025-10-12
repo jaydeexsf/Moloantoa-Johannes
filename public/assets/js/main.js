@@ -351,8 +351,8 @@
       const techStack = p.tech ? p.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('') : '';
       
       item.innerHTML = `
-        <div class="portfolio-content">
-          <img src="${p.image}" class="img-fluid" alt="${p.title}">
+        <div style="background-image: url(${p.image});" class="portfolio-content">
+          <!-- <img src="${p.image}" class="img-fluid" alt="${p.title}"> -->
           <div class="portfolio-info">
             <h4>${p.title}</h4>
             <p>${p.summary || ''}</p>

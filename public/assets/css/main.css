@@ -914,7 +914,6 @@ section,
 .portfolio .portfolio-content:hover {
   border-color: #00d9ff;
   box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-  transform: translateY(-5px);
 }
 
 .portfolio .portfolio-content img {
@@ -1609,7 +1608,7 @@ section,
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+
 }
 
 .feature-card .icon-box {
@@ -1700,4 +1699,47 @@ body, main, section {
 .portfolio-links {
   display: flex;
   gap: 10px;
+}
+
+/* Tech Stack Badges in Portfolio */
+.tech-stack-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.tech-stack-badges .tech-badge {
+  background: rgba(0, 217, 255, 0.1);
+  color: #00d9ff;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-stack-badges .tech-badge:hover {
+  background: rgba(0, 217, 255, 0.2);
+  border-color: #00d9ff;
+  transform: translateY(-2px);
+}
+
+/* Portfolio Category Icons */
+.portfolio .portfolio-filters li[data-filter="*"]::before {
+  content: "🧩 ";
+}
+
+.portfolio .portfolio-filters li[data-filter=".filter-fullstack"]::before {
+  content: "🧩 ";
+}
+
+.portfolio .portfolio-filters li[data-filter=".filter-backend"]::before {
+  content: "⚙️ ";
+}
+
+.portfolio .portfolio-filters li[data-filter=".filter-contribution"]::before {
+  content: "🤝 ";
 }

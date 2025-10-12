@@ -8,7 +8,7 @@
       "image": "assets/img/portfolio/offcampusrooms1.png",
       "url": "https://off-campus-rooms.vercel.app/",
       "repo": "https://github.com/jaydeexsf/OffCampusRooms",
-      "category": "Web App",
+      "category": "FULL STACK",
       "client": "Internal Project",
       "date": "2024",
       "images": [
@@ -35,7 +35,7 @@
       "image": "assets/img/portfolio/masjidTheBigOneFrontPage.png",
       "url": "http://masjid-directory.vercel.app/",
       "repo": "https://github.com/jaydeexsf/Masjid-Directory",
-      "category": "Platform",
+      "category": "FULL STACK",
       "client": "Community",
       "date": "2024",
       "images": [
@@ -53,6 +53,52 @@
         "Events creation and discovery"
       ],
       "tech": ["Next.js", "MongoDB", "TailwindCSS", "Server-side Rendering"]
+    },
+    {
+      "id": "university-email-verifier",
+      "title": "University Email Verifier",
+      "stack": ["NodeJS", "ExpressJS", "Nodemailer", "MongoDB"],
+      "summary": "Backend Node.js and Express project that automatically generates possible university email combinations and sends verification emails.",
+      "image": "assets/img/portfolio/backend-email-verifier.png",
+      "url": "",
+      "repo": "https://github.com/jaydeexsf/university-email-verifier",
+      "category": "BACKEND",
+      "client": "Personal Project",
+      "date": "2024",
+      "images": [
+        "assets/img/portfolio/backend-email-verifier.png"
+      ],
+      "description": "A backend Node.js and Express project that automatically generates possible university email combinations (e.g. 202219525@myturf.ul.ac.za), sends verification emails via Nodemailer, and stores only valid addresses in MongoDB.",
+      "features": [
+        "Automatic email generation based on university patterns",
+        "Email verification via Nodemailer",
+        "MongoDB storage for valid addresses only",
+        "Express.js REST API"
+      ],
+      "tech": ["Node.js", "Express", "Nodemailer", "MongoDB"]
+    },
+    {
+      "id": "al-quran-api",
+      "title": "Al-Qur'an API (Open Source Contribution)",
+      "stack": ["NodeJS", "ExpressJS", "MongoDB"],
+      "summary": "Contributed to the open-source Al-Qur'an API project, which provides developers with access to Qur'an text, translations, and audio recitations.",
+      "image": "assets/img/portfolio/backend-api-contribution.png",
+      "url": "https://github.com/jaydeexsf/al-quran-api",
+      "repo": "https://github.com/jaydeexsf/al-quran-api",
+      "category": "CONTRIBUTION",
+      "client": "Open Source",
+      "date": "2024",
+      "images": [
+        "assets/img/portfolio/backend-api-contribution.png"
+      ],
+      "description": "Contributed to the open-source Al-Qur'an API project, which provides developers with access to Qur'an text, translations, and audio recitations. Helped improve backend performance and API structure.",
+      "features": [
+        "Qur'an text and translations API",
+        "Audio recitations support",
+        "Backend performance improvements",
+        "API structure enhancements"
+      ],
+      "tech": ["Node.js", "Express", "MongoDB"]
     }
   ]
 }

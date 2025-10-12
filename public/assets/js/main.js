@@ -335,17 +335,34 @@
     if (!container) return;
     container.innerHTML = '';
     projects.forEach((p) => {
+      // Map category to filter class
+      const categoryMap = {
+        'FULL STACK': 'filter-fullstack',
+        'BACKEND': 'filter-backend',
+        'CONTRIBUTION': 'filter-contribution'
+      };
+      
+      const filterClass = categoryMap[p.category] || 'filter-app';
+      
       const item = document.createElement('div');
-      item.className = 'col-lg-4 col-md-6 portfolio-item isotope-item filter-app';
+      item.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filterClass}`;
+      
+      // Create tech stack badges
+      const techStack = p.tech ? p.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('') : '';
+      
       item.innerHTML = `
         <div class="portfolio-content h-100">
           <img src="${p.image}" class="img-fluid" alt="${p.title}">
           <div class="portfolio-info">
             <h4>${p.title}</h4>
             <p>${p.summary || ''}</p>
+            <div class="tech-stack-badges">
+              ${techStack}
+            </div>
             <div class="portfolio-links">
-              <a href="${p.image}" title="${p.title}" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="portfolio-details.html?id=${encodeURIComponent(p.id || p.title)}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              ${p.url ? `<a href="${p.url}" title="Live Demo" target="_blank" class="preview-link"><i class="bi bi-globe"></i></a>` : ''}
+              ${p.repo ? `<a href="${p.repo}" title="GitHub Repository" target="_blank" class="details-link"><i class="bi bi-github"></i></a>` : ''}
+              <a href="portfolio-details.html?id=${encodeURIComponent(p.id || p.title)}" title="More Details" class="details-link"><i class="bi bi-info-circle"></i></a>
             </div>
           </div>
         </div>

@@ -292,7 +292,7 @@
     grid.className = 'skills-grid';
 
     const iconMap = {
-      'TypeScript': 'bi-filetype-ts',
+      'TypeScript': 'bi-code-slash',
       'JavaScript': 'bi-filetype-js',
       'Java': 'bi-cup-hot',
       'SQL': 'bi-database',
@@ -345,13 +345,13 @@
       const filterClass = categoryMap[p.category] || 'filter-app';
       
       const item = document.createElement('div');
-      item.className = `col-lg-4 col-md-6 portfolio-item isotope-item ${filterClass}`;
+      item.className = `portfolio-item isotope-item ${filterClass}`;
       
       // Create tech stack badges
       const techStack = p.tech ? p.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('') : '';
       
       item.innerHTML = `
-        <div class="portfolio-content h-100">
+        <div class="portfolio-content">
           <img src="${p.image}" class="img-fluid" alt="${p.title}">
           <div class="portfolio-info">
             <h4>${p.title}</h4>
@@ -493,22 +493,30 @@
       const container = isotopeItem.querySelector('.isotope-container');
       if (!container) return;
 
-      // Destroy existing instance if any by replacing node (simple way to drop listeners)
-      // Then re-create imagesLoaded + Isotope
+      // Destroy existing instance if any
+      if (container.isotope) {
+        container.isotope.destroy();
+      }
+
+      // Initialize Isotope with proper settings
       imagesLoaded(container, function() {
         const iso = new Isotope(container, {
           itemSelector: '.isotope-item',
-          layoutMode: isotopeItem.getAttribute('data-layout') ?? 'masonry',
-          filter: isotopeItem.getAttribute('data-default-filter') ?? '*',
-          sortBy: isotopeItem.getAttribute('data-sort') ?? 'original-order'
+          layoutMode: 'masonry',
+          filter: '*',
+          sortBy: 'original-order'
         });
 
+        // Add click listeners to filter buttons
         isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
           filters.addEventListener('click', function() {
             const active = isotopeItem.querySelector('.isotope-filters .filter-active');
             if (active) active.classList.remove('filter-active');
             this.classList.add('filter-active');
-            iso.arrange({ filter: this.getAttribute('data-filter') });
+            
+            const filter = this.getAttribute('data-filter');
+            iso.arrange({ filter: filter });
+            
             if (typeof aosInit === 'function') {
               aosInit();
             }
